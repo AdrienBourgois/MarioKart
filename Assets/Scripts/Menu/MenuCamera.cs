@@ -2,8 +2,6 @@
 
 public class MenuCamera : MonoBehaviour
 {
-
-    [SerializeField]
     GameObject panels = null;
 
     bool need_position_update = false;
@@ -15,6 +13,7 @@ public class MenuCamera : MonoBehaviour
 
     void Awake()
     {
+        panels = MenuManager.Instance.panels;
         canvas_transform = panels.GetComponent<RectTransform>();
     }
 
@@ -22,7 +21,7 @@ public class MenuCamera : MonoBehaviour
     {
         if (need_position_update)
         {
-            t += 1f * Time.deltaTime;
+            t += 3f * Time.deltaTime;
             PositionUpdate();
             if (t >= 1)
             {
