@@ -5,6 +5,10 @@ using UnityEngine.UI;
 public class GameMgr : MonoBehaviour {
 
     [SerializeField]
+    public Text victory_label;
+    [SerializeField]
+    public Text loose_label;
+    [SerializeField]
     public int max_turn = 3;
 
     private static GameMgr instance = null;
@@ -17,6 +21,12 @@ public class GameMgr : MonoBehaviour {
             instance = GameObject.FindGameObjectWithTag("GameMgr").GetComponent<GameMgr>();
             return instance;
         }
+    }
+
+    void Awake()
+    {
+        victory_label.enabled = false;
+        loose_label.enabled = false;
     }
 
     // Use this for initialization

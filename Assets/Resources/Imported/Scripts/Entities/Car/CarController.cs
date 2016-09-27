@@ -307,10 +307,13 @@ public class CarController : MonoBehaviour, ICarController
         RaycastHit forwardHitInfo;
         if (Physics.Raycast(forwardRay, out forwardHitInfo, 3.5f + speed * Time.fixedDeltaTime, layerMask))
         {
-            if (Mathf.Abs(Vector3.Dot(transform.up, forwardHitInfo.normal) - transform.up.magnitude) > 0.5f)
+            if (forwardHitInfo.transform.gameObject.CompareTag("Wall"))
             {
-            if (speed > 30f)
-                speed = 30f * Mathf.Sign(speed);
+                if (Mathf.Abs(Vector3.Dot(transform.up, forwardHitInfo.normal) - transform.up.magnitude) > 0.5f)
+                {
+                    if (speed > 30f)
+                        speed = 30f * Mathf.Sign(speed);
+                }
             }
         }
     }
