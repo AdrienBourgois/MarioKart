@@ -26,6 +26,7 @@ public class InputMgr : MonoBehaviour
     public event InputKey ObjectBackIsDown;
     public event InputKey ObjectBackIsUp;
     public event InputKey escapeIsDown;
+    public event InputKey LeftControlIsDown;
     
     public delegate void InputAxis(float axis);
     public event InputAxis steering;
@@ -47,15 +48,17 @@ public class InputMgr : MonoBehaviour
             brake(Input.GetAxis("Backward"));
         if (accel != null)
             accel(Input.GetAxis("Forward"));
-        //if (Input.GetButtonDown("UseObject") && spaceIsDown != null)
-        //    spaceIsDown();
-        //if (Input.GetButtonUp("UseObject") && spaceIsUp != null)
-        //    spaceIsUp();
-        //if (Input.GetButtonUp("ObjectBack") && ObjectBackIsUp != null)
-        //    ObjectBackIsUp();
-        //if (Input.GetButtonDown("ObjectBack") && ObjectBackIsDown != null)
-        //    ObjectBackIsDown();
-        if (Input.GetKeyDown(KeyCode.Escape) && escapeIsDown != null)
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+            LeftControlIsDown();
+            //if (Input.GetButtonDown("UseObject") && spaceIsDown != null)
+            //    spaceIsDown();
+            //if (Input.GetButtonUp("UseObject") && spaceIsUp != null)
+            //    spaceIsUp();
+            //if (Input.GetButtonUp("ObjectBack") && ObjectBackIsUp != null)
+            //    ObjectBackIsUp();
+            //if (Input.GetButtonDown("ObjectBack") && ObjectBackIsDown != null)
+            //    ObjectBackIsDown();
+            if (Input.GetKeyDown(KeyCode.Escape) && escapeIsDown != null)
             escapeIsDown();
     }
 

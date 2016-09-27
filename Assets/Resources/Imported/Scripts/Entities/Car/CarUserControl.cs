@@ -101,4 +101,10 @@ public class CarUserControl : MonoBehaviour
     void OnBackObjectUp()
     {
     }
+
+    public void ImproveAccelleration(float value)
+    {
+        Debug.Log("speed Improved");
+        acceleration *= value;
+    }
 }

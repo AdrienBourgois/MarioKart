@@ -85,13 +85,18 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+<<<<<<< Updated upstream
 --- !u!1 &145517674
+=======
+--- !u!1 &623317155
+>>>>>>> Stashed changes
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 4
   m_Component:
+<<<<<<< Updated upstream
   - 224: {fileID: 145517675}
   - 222: {fileID: 145517678}
   - 114: {fileID: 145517677}
@@ -345,37 +350,73 @@ GameObject:
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
+=======
+  - 4: {fileID: 623317160}
+  - 20: {fileID: 623317159}
+  - 92: {fileID: 623317158}
+  - 124: {fileID: 623317157}
+  - 81: {fileID: 623317156}
+  m_Layer: 0
+  m_Name: Main Camera
+  m_TagString: MainCamera
+>>>>>>> Stashed changes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< Updated upstream
 --- !u!81 &393733350
+=======
+--- !u!81 &623317156
+>>>>>>> Stashed changes
 AudioListener:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 393733349}
   m_Enabled: 1
 --- !u!92 &393733351
+=======
+  m_GameObject: {fileID: 623317155}
+  m_Enabled: 1
+--- !u!124 &623317157
+>>>>>>> Stashed changes
 Behaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 393733349}
   m_Enabled: 1
 --- !u!124 &393733352
+=======
+  m_GameObject: {fileID: 623317155}
+  m_Enabled: 1
+--- !u!92 &623317158
+>>>>>>> Stashed changes
 Behaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 393733349}
   m_Enabled: 1
 --- !u!20 &393733353
+=======
+  m_GameObject: {fileID: 623317155}
+  m_Enabled: 1
+--- !u!20 &623317159
+>>>>>>> Stashed changes
 Camera:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 393733349}
+=======
+  m_GameObject: {fileID: 623317155}
+>>>>>>> Stashed changes
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
@@ -389,9 +430,15 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
+<<<<<<< Updated upstream
   orthographic: 1
   orthographic size: 5
   m_Depth: 0
+=======
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: -1
+>>>>>>> Stashed changes
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -404,11 +451,16 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
+<<<<<<< Updated upstream
 --- !u!4 &393733354
+=======
+--- !u!4 &623317160
+>>>>>>> Stashed changes
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 393733349}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -615,10 +667,16 @@ Transform:
   m_GameObject: {fileID: 528855452}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
+=======
+  m_GameObject: {fileID: 623317155}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: -10}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< Updated upstream
   m_RootOrder: 3
 --- !u!1 &538601530
 GameObject:
@@ -864,6 +922,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   current_display: 0
   time_between_objects: 10
+=======
+  m_RootOrder: 0
+>>>>>>> Stashed changes
 --- !u!1 &977358314
 GameObject:
   m_ObjectHideFlags: 0
@@ -925,6 +986,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< Updated upstream
   m_RootOrder: 4
 --- !u!1 &1097669747
 GameObject:
@@ -1341,3 +1403,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2031815573}
+=======
+  m_RootOrder: 1
+>>>>>>> Stashed changes
