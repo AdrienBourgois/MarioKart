@@ -539,6 +539,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ab42636e6e815348be439d32b2c1882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  current_display: 0
+  time_between_objects: 10
 --- !u!114 &487312548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -553,7 +555,7 @@ MonoBehaviour:
   panels: {fileID: 538601530}
   cam: {fileID: 393733353}
   cars:
-  - {fileID: 192976, guid: b1d1581a2c20fb74db1917a89e6a4446, type: 2}
+  - {fileID: 126882, guid: b1d1581a2c20fb74db1917a89e6a4446, type: 2}
   tracks:
   - {fileID: 151004, guid: 0f8638bd84d043841b4893a5560d6ea6, type: 2}
 --- !u!1 &528855452
@@ -860,6 +862,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ab42636e6e815348be439d32b2c1882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  current_display: 0
+  time_between_objects: 10
 --- !u!1 &977358314
 GameObject:
   m_ObjectHideFlags: 0
