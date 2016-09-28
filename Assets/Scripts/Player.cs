@@ -19,7 +19,7 @@ public class Player : InfoCourse {
 
         if (Physics.Raycast(transform.position, fwd, 2))
         {
-            print("There is lol");
+            //print("There is lol");
         }
     }
 

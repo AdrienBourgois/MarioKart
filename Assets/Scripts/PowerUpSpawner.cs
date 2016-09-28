@@ -18,7 +18,9 @@ public class PowerUpSpawner : MonoBehaviour {
         //Debug.Log("Collision!!!" + collider.gameObject.name);
         if (collider.gameObject.tag == "AreaEffectKart")
         {
-            ItemsMgr.Instance.AddItemToKart(collider.transform.parent.gameObject);
+            GameObject kart = collider.transform.parent.gameObject;
+            if (!kart.GetComponent<CarUserControl>().Has_Power_Up)
+                ItemsMgr.Instance.AddItemToKart(kart);
         }
 
     }

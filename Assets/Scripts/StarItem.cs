@@ -3,7 +3,8 @@ using System.Collections;
 
 public class StarItem : BaseItem, IPowerUpItem {
 
-    
+    [SerializeField]
+    float improve_speed;
 
     // Use this for initialization
     void Start () {
@@ -18,7 +19,6 @@ public class StarItem : BaseItem, IPowerUpItem {
 
     public void AddBenefit()
     {
-        float improve_speed = 5;
         OnImproveSpeed(improve_speed);
     }
 
@@ -26,6 +26,6 @@ public class StarItem : BaseItem, IPowerUpItem {
     {
         base.ActiveItem();
         AddBenefit();
-        ItemsMgr.Instance.UnregisterInput(this);
+        Expire();
     }
 }

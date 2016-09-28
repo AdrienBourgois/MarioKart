@@ -51,10 +51,12 @@ public class ItemsMgr : MonoBehaviour {
     public void UnregisterInput(BaseItem power_up)
     {
         InputMgr.Instance.LeftControlIsDown -= power_up.ActiveItem;
+        
     }
 
     public void AddItemToKart(GameObject kart)
     {
+        
         GameObject item = RandItemInstance();
         BaseItem power_up = item.GetComponent<BaseItem>();
 
@@ -67,7 +69,7 @@ public class ItemsMgr : MonoBehaviour {
         System.Random rand_range = new System.Random();
         int idx_item = rand_range.Next(0, items_prefabs_list.Count);
         GameObject item = Instantiate(items_prefabs_list[idx_item]);
-        Debug.Log("Rand inst = " + idx_item);
+        //Debug.Log("Rand inst = " + idx_item);
         return item;
     }
 }
