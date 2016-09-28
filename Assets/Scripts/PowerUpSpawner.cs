@@ -17,7 +17,9 @@ public class PowerUpSpawner : MonoBehaviour {
     {
         //Debug.Log("Collision!!!" + collider.gameObject.name);
         if (collider.gameObject.tag == "AreaEffectKart")
-
+        {
+            ItemsMgr.Instance.AddItemToKart(collider.transform.parent.gameObject);
+        }
 
     }
 }

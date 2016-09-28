@@ -28,7 +28,7 @@ public class CarsMgr : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        InscribeToPowerUpEvents();
+        //InscribeToPowerUpEvents();
 	}
 	
 	// Update is called once per frame
@@ -36,9 +36,9 @@ public class CarsMgr : MonoBehaviour {
 	
 	}
 
-    void InscribeToPowerUpEvents(/*GameObject car*/)
+    public void InscribeToPowerUpEvents(GameObject kart, BaseItem power_up)
     {
-        CarUserControl car_control = player_car.GetComponent<CarUserControl>();
-        ItemsMgr.Instance.Star.improve_speed += car_control.ImproveAccelleration;
+        CarUserControl car_control = kart.GetComponent<CarUserControl>();
+        power_up.improve_speed += car_control.ImproveAccelleration;
     }
 }

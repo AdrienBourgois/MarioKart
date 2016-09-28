@@ -49,7 +49,8 @@ public class InputMgr : MonoBehaviour
         if (accel != null)
             accel(Input.GetAxis("Forward"));
         if (Input.GetKeyDown(KeyCode.LeftControl))
-            LeftControlIsDown();
+            if (LeftControlIsDown != null)
+                LeftControlIsDown();
             //if (Input.GetButtonDown("UseObject") && spaceIsDown != null)
             //    spaceIsDown();
             //if (Input.GetButtonUp("UseObject") && spaceIsUp != null)

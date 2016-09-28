@@ -26,6 +26,6 @@ public class StarItem : BaseItem, IPowerUpItem {
     {
         base.ActiveItem();
         AddBenefit();
-        
+        ItemsMgr.Instance.UnregisterInput(this);
     }
 }

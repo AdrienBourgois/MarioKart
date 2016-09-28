@@ -7,6 +7,8 @@ TagManager:
   - GameMgr
   - ItemsMgr
   - AreaEffectKart
+  - Wall
+  - CarsMgr
   layers:
   - Default
   - TransparentFX
