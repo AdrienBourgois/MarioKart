@@ -9,7 +9,7 @@ public abstract class InfoCourse : MonoBehaviour
     [SerializeField]
     public Text turn_label;
 
-    public string turn_str = "Turns: ";
+    private string turn_str = "Turns: ";
 
     public bool checkpoint = false;
     public int position = 1;

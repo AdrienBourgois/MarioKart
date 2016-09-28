@@ -41,8 +41,6 @@ GameObject:
   - 4: {fileID: 499836}
   - 54: {fileID: 5426906}
   - 114: {fileID: 11434934}
-  - 114: {fileID: 114000013030789054}
-  - 114: {fileID: 114000012187606638}
   - 114: {fileID: 919936622}
   - 114: {fileID: 1763119038}
   m_Layer: 12
@@ -358,7 +356,7 @@ GameObject:
   - 135: {fileID: 13559614}
   m_Layer: 12
   m_Name: AreaEffect
-  m_TagString: Untagged
+  m_TagString: AreaEffectKart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1703,28 +1701,6 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 110920}
   m_IsPrefabParent: 1
---- !u!114 &919936622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 110920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3768176d8f428344bd87ca164345920, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1763119038
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 110920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89bffbaf7ad9c664da2696806e4b426a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &919936622
 MonoBehaviour:
   m_ObjectHideFlags: 1

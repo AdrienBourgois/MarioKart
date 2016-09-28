@@ -13,6 +13,16 @@ public class Player : InfoCourse {
         UpdateTurn();
     }
 
+    void FixedUpdate()
+    {
+        Vector3 fwd = transform.TransformDirection(Vector3.forward);
+
+        if (Physics.Raycast(transform.position, fwd, 2))
+        {
+            print("There is lol");
+        }
+    }
+
     void OnTriggerEnter(Collider collider)
     {
         if (collider.gameObject.layer == LayerMask.NameToLayer("Finish"))
