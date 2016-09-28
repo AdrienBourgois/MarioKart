@@ -2,41 +2,32 @@
 
 public class CarCam : MonoBehaviour
 {
-    Transform carCam;
-    [SerializeField]
-    Transform car;
-    Rigidbody carPhysics;
-    public Vector3 offset;
+    private Transform camParent;
+    public Transform car;
 
-    public float rotationThreshold = 1f;
-    public float cameraStickiness = 10.0f;
-    public float cameraRotationSpeed = 5.0f;
+    [SerializeField]
+    private float cameraStickiness = 10.0f;
+    [SerializeField]
+    private float cameraRotationSpeed = 5.0f;
 
     void Awake()
     {
-        carPhysics = car.GetComponent<Rigidbody>();
+        camParent = GetComponent<Transform>();
     }
 
     void Start()
     {
-        
+        camParent.parent = null;
     }
 
     void FixedUpdate()
     {
         Quaternion look;
 
-        look = Quaternion.LookRotation(car.forward * 0.2f);
-        Vector3 rotation = car.transform.localEulerAngles;
-        rotation.x = 30;
-        look.eulerAngles = rotation;
+        camParent.position = Vector3.Lerp(camParent.position, car.position, cameraStickiness * Time.fixedDeltaTime);
 
-        transform.rotation = Quaternion.Slerp(transform.rotation, look, cameraRotationSpeed * Time.fixedDeltaTime);
-
-        Vector3 pos = transform.localPosition;
-
-        pos += new Vector3(-4f, 2f, 0);
-        //pos.y += 2f;
-        transform.position = Vector3.Lerp(pos, car.position, cameraStickiness * Time.fixedDeltaTime);
+        look = Quaternion.LookRotation(car.forward);
+        look = Quaternion.Slerp(camParent.rotation, look, cameraRotationSpeed * Time.fixedDeltaTime);
+        camParent.rotation = look;
     }
 }

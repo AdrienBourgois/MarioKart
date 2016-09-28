@@ -118,10 +118,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 114076}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7232962877fd4fe4892a8892012b3293, type: 3}
+  m_Script: {fileID: 11500000, guid: b9e01a40ae72eaf448b376c20ff82d7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationThreshold: 1
+  car: {fileID: 0}
   cameraStickiness: 10
   cameraRotationSpeed: 5
 --- !u!124 &12496856
