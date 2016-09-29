@@ -40,9 +40,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f254efdd62d4287499d33bf2d57b7fd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item_name: 
+  item_name: Star
   is_active: 0
   time_action: 0
+  boost_speed: 99999
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

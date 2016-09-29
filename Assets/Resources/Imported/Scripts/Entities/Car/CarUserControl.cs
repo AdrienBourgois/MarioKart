@@ -11,8 +11,10 @@ public class CarUserControl : MonoBehaviour
     private float brake = 0f;
     private float boost = 0f;
     private bool registered = false;
+    private bool has_power_up = false;
 
     public float Boost { get { return boost; } set { boost = value; } }
+    public bool Has_Power_Up { get { return has_power_up; } set { has_power_up = value; } }
 
     public void RegisterInputFunctions()
     {
@@ -106,5 +108,11 @@ public class CarUserControl : MonoBehaviour
     {
         Debug.Log("speed Improved");
         acceleration *= value;
+    }
+
+    public void PowerUpExpired(BaseItem sender)
+    {
+        has_power_up = false;
+        CarsMgr.Instance.UnscribeToPowerUpEvents(this.gameObject, sender);
     }
 }
