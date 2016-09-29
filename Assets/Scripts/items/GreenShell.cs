@@ -30,4 +30,14 @@ public class GreenShell : BaseItem, IThrowableItem {
         base.ActiveItem();
         Throw();
     }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("OnCollisionEnter");
+    }
+
+    void OnTriggerEnter(Collider collider)
+    {
+        Debug.Log("OnTriggerEnter");
+    }
 }
