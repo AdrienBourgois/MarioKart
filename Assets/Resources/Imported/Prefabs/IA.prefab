@@ -60,10 +60,9 @@ GameObject:
   - 4: {fileID: 434564}
   - 54: {fileID: 5402048}
   - 114: {fileID: 11427860}
-  - 114: {fileID: 11471960}
-  - 114: {fileID: 11413142}
+  - 114: {fileID: 11496074}
   m_Layer: 8
-  m_Name: Player
+  m_Name: IA
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -235,7 +234,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 470178}
   - 135: {fileID: 13518438}
-  - 114: {fileID: 11463944}
+  - 114: {fileID: 11456974}
   m_Layer: 8
   m_Name: AreaEffect
   m_TagString: AreaEffectKart
@@ -1704,17 +1703,6 @@ Light:
   m_ShadowRadius: 0
   m_ShadowAngle: 0
   m_AreaSize: {x: 1, y: 1}
---- !u!114 &11413142
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 120752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89bffbaf7ad9c664da2696806e4b426a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11427860
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1748,7 +1736,7 @@ MonoBehaviour:
   - {fileID: 145100}
   - {fileID: 153860}
   - {fileID: 103178}
---- !u!114 &11463944
+--- !u!114 &11456974
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1756,13 +1744,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 139940}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e644be078496bd4b8aa43ab31e53148, type: 3}
+  m_Script: {fileID: 11500000, guid: c751d3da9a8cf7c458427cee4c4b57d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gameMgr: {fileID: 11472266, guid: 405fe4f5faacfbe40b6586dcaeb71c1e, type: 2}
-  positon_label: {fileID: 11466718, guid: cd00c2b671703264ab148045a77d816d, type: 2}
-  turn_label: {fileID: 11430598, guid: cd00c2b671703264ab148045a77d816d, type: 2}
---- !u!114 &11471960
+--- !u!114 &11496074
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1770,9 +1756,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 120752}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3768176d8f428344bd87ca164345920, type: 3}
+  m_Script: {fileID: 11500000, guid: 19f4d56b2f3526b43a506b3c53a27dd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  path: {fileID: 11402784, guid: 20dce300e5dcd4c429b661a8978a155f, type: 2}
+  speed: 10
+  rotation_speed: 5
+  gameMgr: {fileID: 11472266, guid: 405fe4f5faacfbe40b6586dcaeb71c1e, type: 2}
 --- !u!135 &13518438
 SphereCollider:
   m_ObjectHideFlags: 1
