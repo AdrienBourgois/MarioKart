@@ -1,20 +1,66 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.UI;
 
 public abstract class InfoCourse : MonoBehaviour
 {
     [SerializeField]
-    public Text positon_label;
-    [SerializeField]
-    public Text turn_label;
+    private GameMgr gameMgr;
 
     private string turn_str = "Turns: ";
-
-    public bool checkpoint = false;
-    public int position = 1;
-    public int turn = 1;
-    public GameMgr gameMgr;
+    public string Turn_str
+    {
+        get
+        {
+            return turn_str;
+        }
+        set
+        {
+            turn_str = value;
+        }
+    }
+    private bool checkpoint = false;
+    public bool Checkpoint
+    {
+        get
+        {
+            return checkpoint;
+        }
+        set
+        {
+            checkpoint = value;
+        }
+    }
+    private int position = 1;
+    public int Position
+    {
+        get
+        {
+            return position;
+        }
+        set
+        {
+            position = value;
+        }
+    }
+    private int turn = 1;
+    public int Turn
+    {
+        get
+        {
+            return turn;
+        }
+        set
+        {
+            turn = value;
+        }
+    }
+    public GameMgr GameMgr
+    {
+        get
+        {
+            return gameMgr;
+        }
+    }
 
     // Use this for initialization
     void Start()
@@ -28,13 +74,8 @@ public abstract class InfoCourse : MonoBehaviour
 
     }
 
-    public void Init() {
-        gameMgr = GameMgr.Instance;
-        turn_label.text = turn_str + turn + "/" + gameMgr.max_turn;
-    }
-
-    public void UpdateTurn()
+    public void Init()
     {
-        turn_label.text = turn_str + turn + "/" + gameMgr.max_turn;
+        gameMgr = GameMgr.Instance;
     }
 }

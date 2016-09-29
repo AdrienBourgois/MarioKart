@@ -10,30 +10,31 @@ public class IA : InfoCourse
 
     // Update is called once per frame
     void Update() {
-        UpdateTurn();
+
     }
 
     void OnTriggerEnter(Collider collider)
     {
         if (collider.gameObject.layer == LayerMask.NameToLayer("Finish"))
         {
-            if (checkpoint)
+            if (Checkpoint)
             {
-                if (turn == gameMgr.max_turn && position == 1)
+                if (Turn == GameMgr.max_turn && Position == 1)
                 {
-                    gameMgr.loose_label.enabled = true;
+                    GameMgr.loose_label.enabled = true;
+                    GameMgr.game_ready = false;
                 }
                 else
                 {
-                    turn = turn + 1;
-                    checkpoint = false;
+                    Turn = Turn + 1;
+                    Checkpoint = false;
                 }
             }
         }
 
         if (collider.gameObject.layer == LayerMask.NameToLayer("Checkpoint"))
         {
-            checkpoint = true;
+            Checkpoint = true;
         }
     }
 }

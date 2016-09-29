@@ -1,10 +1,13 @@
 fileFormatVersion: 2
 guid: 77b3b1ce0df772f43ade1e29f5bb0b89
-timeCreated: 1474892115
+timeCreated: 1475153647
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - positon_label: {fileID: 11466718, guid: cd00c2b671703264ab148045a77d816d, type: 2}
+  - turn_label: {fileID: 11430598, guid: cd00c2b671703264ab148045a77d816d, type: 2}
+  - gameMgr: {fileID: 11472266, guid: 405fe4f5faacfbe40b6586dcaeb71c1e, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

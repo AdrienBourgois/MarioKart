@@ -13,7 +13,7 @@ public class GameMgr : MonoBehaviour {
     [SerializeField]
     public int max_turn = 3;
 
-    //private int count = 3;
+    public bool game_ready = false;
     private static GameMgr instance = null;
     public static GameMgr Instance
     {
@@ -61,7 +61,7 @@ public class GameMgr : MonoBehaviour {
             {
                 counter_label.color = Color.white;
                 counter_label.text = "Go!!";
-                //counter_label.enabled = false;
+                game_ready = true;
             }
             yield return new WaitForSeconds(1.5f);
         }

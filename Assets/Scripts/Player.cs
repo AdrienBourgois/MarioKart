@@ -1,39 +1,47 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Player : InfoCourse {
 
-	// Use this for initialization
-	void Start() {
+    [SerializeField]
+    private Text positon_label;
+    [SerializeField]
+    private Text turn_label;
+
+    // Use this for initialization
+    void Start() {
         Init();
+        turn_label.text = Turn_str + Turn + "/" + GameMgr.max_turn;
     }
 	
 	// Update is called once per frame
 	void Update() {
-        UpdateTurn();
+        turn_label.text = Turn_str + Turn + "/" + GameMgr.max_turn;
     }
 
     void OnTriggerEnter(Collider collider)
     {
         if (collider.gameObject.layer == LayerMask.NameToLayer("Finish"))
         {
-            if (checkpoint)
+            if (Checkpoint)
             {
-                if (turn == gameMgr.max_turn && position == 1)
+                if (Turn == GameMgr.max_turn && Position == 1)
                 {
-                    gameMgr.victory_label.enabled = true;
+                    GameMgr.victory_label.enabled = true;
+                    GameMgr.game_ready = false;
                 }
                 else
                 {
-                    turn = turn + 1;
-                    checkpoint = false;
+                    Turn = Turn + 1;
+                    Checkpoint = false;
                 }
             }
         }
 
         if (collider.gameObject.layer == LayerMask.NameToLayer("Checkpoint"))
         {
-            checkpoint = true;
+            Checkpoint = true;
         }
     }
 }
