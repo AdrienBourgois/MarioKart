@@ -44,8 +44,16 @@ public class CarsMgr : MonoBehaviour
     {
         CarUserControl car_control = kart.GetComponent<CarUserControl>();
         car_control.Has_Power_Up = true;
+
         power_up.improve_speed += car_control.ImproveAccelleration;
         power_up.expired += car_control.PowerUpExpired;
     }
 
+    public void UnscribeToPowerUpEvents(GameObject kart, BaseItem power_up)
+    {
+        CarUserControl car_control = kart.GetComponent<CarUserControl>();
+
+        power_up.improve_speed -= car_control.ImproveAccelleration;
+        power_up.expired -= car_control.PowerUpExpired;
+    }
 }

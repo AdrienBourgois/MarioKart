@@ -110,8 +110,9 @@ public class CarUserControl : MonoBehaviour
         acceleration *= value;
     }
 
-    public void PowerUpExpired()
+    public void PowerUpExpired(BaseItem sender)
     {
         has_power_up = false;
+        CarsMgr.Instance.UnscribeToPowerUpEvents(this.gameObject, sender);
     }
 }

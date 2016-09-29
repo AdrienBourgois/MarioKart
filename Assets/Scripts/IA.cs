@@ -13,19 +13,6 @@ public class IA : InfoCourse
         UpdateTurn();
     }
 
-<<<<<<< HEAD
-    void FixedUpdate()
-    {
-        Vector3 fwd = transform.TransformDirection(Vector3.forward);
-
-        if (Physics.Raycast(transform.position, fwd, 10))
-        {
-            //print("There is lol");
-        }
-    }
-
-=======
->>>>>>> master
     void OnTriggerEnter(Collider collider)
     {
         if (collider.gameObject.layer == LayerMask.NameToLayer("Finish"))

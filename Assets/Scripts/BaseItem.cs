@@ -15,7 +15,7 @@ public abstract class BaseItem : MonoBehaviour {
     public delegate void ItemEventHandler(float args1);
     public event ItemEventHandler improve_speed;
 
-    public delegate void StatusEventHandler();
+    public delegate void StatusEventHandler(BaseItem sender);
     public event StatusEventHandler expired;
 
     // Use this for initialization
@@ -42,7 +42,7 @@ public abstract class BaseItem : MonoBehaviour {
     protected void Expire()
     {
         ItemsMgr.Instance.UnregisterInput(this);
-        expired();
+        expired(this);
         Destroy(this);
     }
     

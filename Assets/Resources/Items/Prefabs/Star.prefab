@@ -43,7 +43,7 @@ MonoBehaviour:
   item_name: 
   is_active: 0
   time_action: 0
-  improve_speed: 999999
+  boost_speed: 99999
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

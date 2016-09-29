@@ -4,7 +4,7 @@ using System.Collections;
 public class StarItem : BaseItem, IPowerUpItem {
 
     [SerializeField]
-    float improve_speed;
+    float boost_speed;
 
     // Use this for initialization
     void Start () {
@@ -19,7 +19,7 @@ public class StarItem : BaseItem, IPowerUpItem {
 
     public void AddBenefit()
     {
-        OnImproveSpeed(improve_speed);
+        OnImproveSpeed(boost_speed);
     }
 
     public override void ActiveItem()
