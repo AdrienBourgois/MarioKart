@@ -51,8 +51,7 @@ public class CarUserControl : MonoBehaviour
     void Awake()
     {
         controller = GetComponent<ICarController>();
-
-        RegisterInputFunctions();
+        //RegisterInputFunctions();
     }
 
     void OnDestroy()
