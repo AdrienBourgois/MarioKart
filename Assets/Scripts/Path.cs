@@ -7,11 +7,11 @@ public class Path : MonoBehaviour {
     [SerializeField]
     private Color line_color;
 
-    private List<Transform> points = new List<Transform>();
+    public List<Transform> points = new List<Transform>();
 
 	// Use this for initialization
 	void Start () {
-	
+
 	}
 	
 	// Update is called once per frame
