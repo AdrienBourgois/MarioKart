@@ -3,6 +3,10 @@ using System.Collections;
 
 public class PowerUpSpawner : MonoBehaviour {
 
+    [SerializeField]
+     float rotation_speed;
+    
+
 	// Use this for initialization
 	void Start () {
 	
@@ -12,6 +16,13 @@ public class PowerUpSpawner : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    void FixedUpdate()
+    {
+        
+        transform.Rotate(new Vector3(0f, 1f, 0f) * Time.deltaTime * rotation_speed, Space.Self);
+        //Debug.Log("rotation = " + transform.rotation);
+    }
 
     void OnTriggerEnter(Collider collider)
     {

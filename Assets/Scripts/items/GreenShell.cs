@@ -45,16 +45,16 @@ public class GreenShell : BaseItem, IThrowableItem {
     {
         RaycastHit hit;
         Vector3 fwd = transform.TransformDirection(Vector3.forward);
-        if (Physics.Raycast(transform.position, fwd, out hit, 3))
+        if (Physics.Raycast(transform.position, fwd, out hit, 4))
             if (hit.collider.tag == "Wall")
             {
+                float angle = 45;
+                if (i > 2)
+                    angle = 170;
                 Debug.Log("Hit Wall");
-                //Quaternion rotation = transform.rotation;
-                //rotation.x += 90;
-                //transform.rotation = rotation;
-                transform.Rotate(new Vector3(0f, 45f * i, 0f), Space.Self);
+                transform.Rotate(new Vector3(0f, angle, 0f), Space.Self);
                 Debug.Log("new rotation = " + transform.rotation);
-                CheckWallsCollisions(++i);
+                CheckWallsCollisions(i += 1);
             }
     }
 }
