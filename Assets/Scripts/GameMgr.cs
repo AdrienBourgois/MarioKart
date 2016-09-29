@@ -13,6 +13,7 @@ public class GameMgr : MonoBehaviour {
     [SerializeField]
     public int max_turn = 3;
 
+    private CarUserControl car_use;
     public bool game_ready = false;
     private static GameMgr instance = null;
     public static GameMgr Instance
@@ -62,6 +63,8 @@ public class GameMgr : MonoBehaviour {
                 counter_label.color = Color.white;
                 counter_label.text = "Go!!";
                 game_ready = true;
+                car_use = GameObject.FindGameObjectWithTag("Player").GetComponent<CarUserControl>();
+                car_use.RegisterInputFunctions();
             }
             yield return new WaitForSeconds(1.5f);
         }
