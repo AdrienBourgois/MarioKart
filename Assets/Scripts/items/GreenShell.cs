@@ -31,13 +31,30 @@ public class GreenShell : BaseItem, IThrowableItem {
         Throw();
     }
 
-    void OnCollisionEnter(Collision collision)
+    void FixedUpdate()
     {
-        Debug.Log("OnCollisionEnter");
+        if (is_throwed)
+        {
+            CheckWallsCollisions();
+        }
     }
 
-    void OnTriggerEnter(Collider collider)
+
+
+    void CheckWallsCollisions(float i = 1)
     {
-        Debug.Log("OnTriggerEnter");
+        RaycastHit hit;
+        Vector3 fwd = transform.TransformDirection(Vector3.forward);
+        if (Physics.Raycast(transform.position, fwd, out hit, 3))
+            if (hit.collider.tag == "Wall")
+            {
+                Debug.Log("Hit Wall");
+                //Quaternion rotation = transform.rotation;
+                //rotation.x += 90;
+                //transform.rotation = rotation;
+                transform.Rotate(new Vector3(0f, 45f * i, 0f), Space.Self);
+                Debug.Log("new rotation = " + transform.rotation);
+                CheckWallsCollisions(++i);
+            }
     }
 }

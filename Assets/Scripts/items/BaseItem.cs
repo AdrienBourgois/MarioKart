@@ -10,6 +10,8 @@ public abstract class BaseItem : MonoBehaviour {
     protected bool is_active;
     [SerializeField]
     protected float time_action;
+    
+    
 
     protected Transform frontal_spawn;
     protected Transform rear_spawn;
@@ -76,7 +78,7 @@ public abstract class BaseItem : MonoBehaviour {
     {
         ItemsMgr.Instance.UnregisterInput(this);
         expired(this);
-        Destroy(this);
+        //Destroy(this);
     }
 
     protected void MoveTo(Transform target, float speed)
@@ -87,10 +89,6 @@ public abstract class BaseItem : MonoBehaviour {
 
     protected void MoveStraightforward(float speed)
     {
-        Vector3 position = transform.position;
-        position.x += Time.deltaTime * speed;
-        //Debug.Log("posistion = " + position);
-        //Debug.Log("rotation = " + transform.rotation);
         transform.Translate(new Vector3(0f, 0f, 1.0f) * Time.deltaTime * speed, Space.Self);
     }
 }

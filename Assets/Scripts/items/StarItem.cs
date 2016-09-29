@@ -14,7 +14,6 @@ public class StarItem : BaseItem, IPowerUpItem {
 	// Update is called once per frame
 	protected override void Update () {
         
-        
     }
 
     public void AddBenefit()
@@ -27,5 +26,6 @@ public class StarItem : BaseItem, IPowerUpItem {
         base.ActiveItem();
         AddBenefit();
         Expire();
+        Destroy(this);
     }
 }
