@@ -11,7 +11,8 @@ public abstract class BaseItem : MonoBehaviour {
     [SerializeField]
     protected float time_action;
 
-    protected Transform idle_pos;
+    protected Transform frontal_spawn;
+    protected Transform rear_spawn;
     protected Transform target;
     protected bool is_throwed;
 
@@ -25,14 +26,16 @@ public abstract class BaseItem : MonoBehaviour {
     void Awake()
     {
         is_active = false;
-        idle_pos = null;
+        frontal_spawn = null;
+        rear_spawn = null;
         target = null;
         is_throwed = false;
     }
 
-    public void Init(Transform new_idle_pos, Transform new_target)
+    public void Init(Transform new_frontal_spawn, Transform new_rear_spawn, Transform new_target)
     {
-        idle_pos = new_idle_pos;
+        frontal_spawn = new_frontal_spawn;
+        rear_spawn = new_rear_spawn;
         target = new_target;
     }
 
@@ -46,11 +49,14 @@ public abstract class BaseItem : MonoBehaviour {
         if (!is_active)
         {
             //Debug.Log("Idle_pos = " + idle_pos.position);
-            Vector3 pos = idle_pos.position;
+            Vector3 pos = frontal_spawn.position;
             //pos.y += 5;
             transform.position = pos;//idle_pos.position;
             //Debug.Log("PowerUp pos =" + transform.position);
-            transform.rotation = idle_pos.rotation;
+            Quaternion rotation = frontal_spawn.rotation;
+            rotation.x = 0;
+            rotation.z = 0;
+            transform.rotation = rotation;
         }
 
 	}
@@ -83,6 +89,8 @@ public abstract class BaseItem : MonoBehaviour {
     {
         Vector3 position = transform.position;
         position.x += Time.deltaTime * speed;
-        transform.position = position;
+        //Debug.Log("posistion = " + position);
+        //Debug.Log("rotation = " + transform.rotation);
+        transform.Translate(new Vector3(0f, 0f, 1.0f) * Time.deltaTime * speed, Space.Self);
     }
 }
