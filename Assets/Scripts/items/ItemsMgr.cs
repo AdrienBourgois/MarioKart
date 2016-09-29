@@ -18,19 +18,13 @@ public class ItemsMgr : MonoBehaviour {
         }
     }
 
-    StarItem star;
-    public StarItem Star
-    {
-        get { return star; }
-    }
-
     List<GameObject> items_prefabs_list = new List<GameObject>();
-
-    enum available_item { Star = 0}
 
     void Awake()
     {
         GameObject item_prefab = Resources.Load<GameObject>("Items/Prefabs/Star");
+        items_prefabs_list.Add(item_prefab);
+        item_prefab = Resources.Load<GameObject>("Items/Prefabs/GreenShell");
         items_prefabs_list.Add(item_prefab);
     }
 
@@ -59,6 +53,8 @@ public class ItemsMgr : MonoBehaviour {
         
         GameObject item = RandItemInstance();
         BaseItem power_up = item.GetComponent<BaseItem>();
+        power_up.Init(kart.transform, null);
+        Debug.Log("Power_up = " + power_up.item_name);
 
         RegisterInput(power_up);
         CarsMgr.Instance.InscribeToPowerUpEvents(kart, power_up);
@@ -67,7 +63,7 @@ public class ItemsMgr : MonoBehaviour {
     public GameObject RandItemInstance()
     {
         System.Random rand_range = new System.Random();
-        int idx_item = rand_range.Next(0, items_prefabs_list.Count);
+        int idx_item = rand_range.Next(1, items_prefabs_list.Count);
         GameObject item = Instantiate(items_prefabs_list[idx_item]);
         //Debug.Log("Rand inst = " + idx_item);
         return item;
