@@ -13,6 +13,7 @@ public class IA : InfoCourse
         UpdateTurn();
     }
 
+<<<<<<< HEAD
     void FixedUpdate()
     {
         Vector3 fwd = transform.TransformDirection(Vector3.forward);
@@ -23,6 +24,8 @@ public class IA : InfoCourse
         }
     }
 
+=======
+>>>>>>> master
     void OnTriggerEnter(Collider collider)
     {
         if (collider.gameObject.layer == LayerMask.NameToLayer("Finish"))
