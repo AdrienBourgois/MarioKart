@@ -21,8 +21,7 @@ public class IA : InfoCourse
             {
                 if (Turn == GameMgr.max_turn && Position == 1)
                 {
-                    GameMgr.loose_label.enabled = true;
-                    GameMgr.game_ready = false;
+                    GameMgr.Loose();
                 }
                 else
                 {

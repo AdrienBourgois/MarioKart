@@ -1,17 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameMgr : MonoBehaviour {
 
     [SerializeField]
-    public Text victory_label;
+    public int max_turn = 3;
     [SerializeField]
-    public Text loose_label;
+    private Text victory_label;
+    [SerializeField]
+    private Text loose_label;
     [SerializeField]
     private Text counter_label;
     [SerializeField]
-    public int max_turn = 3;
+    private Button retry_button;
+    [SerializeField]
+    private Button quit_button;
 
     private CarUserControl car_use;
     public bool game_ready = false;
@@ -31,6 +36,8 @@ public class GameMgr : MonoBehaviour {
     {
         victory_label.enabled = false;
         loose_label.enabled = false;
+        retry_button.gameObject.SetActive(false);
+        quit_button.gameObject.SetActive(false);
     }
 
     // Use this for initialization
@@ -69,5 +76,41 @@ public class GameMgr : MonoBehaviour {
             yield return new WaitForSeconds(1.5f);
         }
         counter_label.enabled = false;
+    }
+
+    public void Victory()
+    {
+        if (loose_label.enabled == true)
+            return;
+        victory_label.enabled = true;
+        game_ready = false;
+        car_use.UnregisterInputFunctions();
+        ShowButton();
+    }
+
+    public void Loose()
+    {
+        if (victory_label.enabled == true)
+            return;
+        loose_label.enabled = true;
+        game_ready = false;
+        car_use.UnregisterInputFunctions();
+        ShowButton();
+    }
+
+    void ShowButton()
+    {
+        retry_button.gameObject.SetActive(true);
+        quit_button.gameObject.SetActive(true);
+    }
+
+    public void Retry()
+    {
+        SceneManager.LoadScene("Level1");
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 }
