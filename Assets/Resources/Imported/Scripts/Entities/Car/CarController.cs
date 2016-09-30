@@ -348,4 +348,9 @@ public class CarController : MonoBehaviour, ICarController
     {
         return from * (1 - t) + to * t;
     }
+
+    public void LostControl(float rotation_speed)
+    {
+        transform.Rotate(new Vector3(0f, 1f, 0f) * Time.deltaTime * rotation_speed, Space.Self);
+    }
 }

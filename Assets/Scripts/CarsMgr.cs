@@ -22,10 +22,6 @@ public class CarsMgr : MonoBehaviour
     void Awake()
     {
         player_car = GameObject.Find("Player");
-        if (player_car == null)
-            Debug.Log("player_car = null");
-        else
-            Debug.Log("player car != null");
     }
 
     // Use this for initialization

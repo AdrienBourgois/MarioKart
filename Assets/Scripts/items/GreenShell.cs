@@ -15,7 +15,7 @@ public class GreenShell : BaseItem, IThrowableItem {
 	protected override void Update () {
 
         if (is_throwed)
-            base.MoveTo(null, speed);
+            base.MoveStraightforward(speed);
         else
             base.Update();
     }
