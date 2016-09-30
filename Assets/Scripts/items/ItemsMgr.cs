@@ -59,7 +59,6 @@ public class ItemsMgr : MonoBehaviour {
         GameObject item = RandItemInstance();
         BaseItem power_up = item.GetComponent<BaseItem>();
         power_up.Init(kart.transform.Find("FrontalSpawn"), kart.transform.Find("RearSpawn"), null);
-        Debug.Log("Power_up = " + power_up.item_name);
 
         RegisterInput(power_up);
         CarsMgr.Instance.InscribeToPowerUpEvents(kart, power_up);

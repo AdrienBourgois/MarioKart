@@ -105,7 +105,6 @@ public class CarUserControl : MonoBehaviour
 
     public void ImproveAccelleration(float value)
     {
-        Debug.Log("speed Improved");
         acceleration *= value;
     }
 

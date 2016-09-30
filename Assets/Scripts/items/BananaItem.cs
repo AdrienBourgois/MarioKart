@@ -29,7 +29,6 @@ public class BananaItem : BaseItem, IThrowableItem {
     {
         base.ActiveItem();
         Throw();
-        StartTimer();
         Expire();
     }
 
@@ -41,15 +40,9 @@ public class BananaItem : BaseItem, IThrowableItem {
             {
                 if (!IsActionTimeExpired())
                     Action();
-            }
-            if (!used)
-            {
-                if (IsTimeExpired() == true)//|| IsActionTimeExpired() == true)
+                else
                     Destroy(this.gameObject);
             }
-            else
-                if (IsActionTimeExpired() == true)
-                    Destroy(this.gameObject);
 
         }
     }
