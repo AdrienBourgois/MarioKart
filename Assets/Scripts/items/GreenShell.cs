@@ -29,6 +29,8 @@ public class GreenShell : BaseItem, IThrowableItem {
     {
         base.ActiveItem();
         Throw();
+        StartTimer();
+        Expire();
     }
 
     void FixedUpdate()
@@ -36,11 +38,11 @@ public class GreenShell : BaseItem, IThrowableItem {
         if (is_throwed)
         {
             CheckWallsCollisions();
+            if (IsTimeExpired())
+                Destroy(this.gameObject);
         }
     }
-
-
-
+    
     void CheckWallsCollisions(float i = 1)
     {
         RaycastHit hit;

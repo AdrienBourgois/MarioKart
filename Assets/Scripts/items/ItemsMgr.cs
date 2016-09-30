@@ -24,10 +24,10 @@ public class ItemsMgr : MonoBehaviour {
     {
         //GameObject item_prefab = Resources.Load<GameObject>("Items/Prefabs/Star");
         //items_prefabs_list.Add(item_prefab);
-        //item_prefab = Resources.Load<GameObject>("Items/Prefabs/GreenShell");
-        //items_prefabs_list.Add(item_prefab);
-        GameObject item_prefab = Resources.Load<GameObject>("Items/Prefabs/Mushroom");
+        GameObject item_prefab = Resources.Load<GameObject>("Items/Prefabs/GreenShell");
         items_prefabs_list.Add(item_prefab);
+        // item_prefab = Resources.Load<GameObject>("Items/Prefabs/Mushroom");
+        //items_prefabs_list.Add(item_prefab);
     }
 
     // Use this for initialization

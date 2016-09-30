@@ -26,6 +26,6 @@ public class StarItem : BaseItem, IPowerUpItem {
         base.ActiveItem();
         AddBenefit();
         Expire();
-        Destroy(this);
+        Destroy(this.gameObject);
     }
 }

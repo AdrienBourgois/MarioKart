@@ -9,10 +9,11 @@ public abstract class BaseItem : MonoBehaviour {
     [SerializeField]
     protected bool is_active;
     [SerializeField]
-    protected float time_action;
-    
-    
+    protected float life_time;
 
+
+
+    protected float expire_time;
     protected Transform frontal_spawn;
     protected Transform rear_spawn;
     protected Transform target;
@@ -90,5 +91,17 @@ public abstract class BaseItem : MonoBehaviour {
     protected void MoveStraightforward(float speed)
     {
         transform.Translate(new Vector3(0f, 0f, 1.0f) * Time.deltaTime * speed, Space.Self);
+    }
+
+    protected void StartTimer()
+    {
+        expire_time = Time.time + life_time;
+    }
+
+    protected bool IsTimeExpired()
+    {
+        if (Time.time > expire_time)
+            return true;
+        return false;
     }
 }
