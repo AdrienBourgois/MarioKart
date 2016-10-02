@@ -3,5 +3,7 @@ using System.Collections;
 
 public interface IThrowableItem
 {
-    void Throw();
+    void MoveTo(Transform target, float speed);
+
+    void MoveStraightforward(float speed);
 }

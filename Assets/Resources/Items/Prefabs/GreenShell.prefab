@@ -89,10 +89,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item_name: GreenShell
-  is_active: 0
   life_time: 6
-  action_time: 0
-  speed: 45
+  action_time: 2
+  speed: 60
+  rotation_speed: 1500
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

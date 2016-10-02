@@ -43,6 +43,7 @@ public class CarsMgr : MonoBehaviour
 
         power_up.improve_speed += car_control.ImproveAccelleration;
         power_up.expired += car_control.PowerUpExpired;
+        
     }
 
     public void UnscribeToPowerUpEvents(GameObject kart, BaseItem power_up)

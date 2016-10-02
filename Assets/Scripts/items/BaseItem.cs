@@ -7,18 +7,17 @@ public abstract class BaseItem : MonoBehaviour {
     [SerializeField]
     public string item_name;
     [SerializeField]
-    protected bool is_active;
-    [SerializeField]
     protected float life_time;
     [SerializeField]
     protected float action_time;
 
+    protected bool is_active;
     protected float expire_action_time;
     protected float expire_life_time;
     protected Transform frontal_spawn;
     protected Transform rear_spawn;
     protected GameObject target;
-    protected bool is_throwed;
+    
 
     public GameObject Target { get { return target; } set { target = value; } }
 
@@ -37,7 +36,7 @@ public abstract class BaseItem : MonoBehaviour {
         frontal_spawn = null;
         rear_spawn = null;
         target = null;
-        is_throwed = false;
+       
     }
 
     public void Init(Transform new_frontal_spawn, Transform new_rear_spawn, GameObject new_target)
@@ -54,8 +53,7 @@ public abstract class BaseItem : MonoBehaviour {
 	
 	// Update is called once per frame
 	protected virtual void Update () { 
-        if (!is_active)
-        {
+
             //Debug.Log("Idle_pos = " + idle_pos.position);
             Vector3 pos = frontal_spawn.position;
             //pos.y += 5;
@@ -65,8 +63,6 @@ public abstract class BaseItem : MonoBehaviour {
             rotation.x = 0;
             rotation.z = 0;
             transform.rotation = rotation;
-        }
-
 	}
 
     public virtual void ActiveItem()
@@ -84,16 +80,6 @@ public abstract class BaseItem : MonoBehaviour {
     {
         ItemsMgr.Instance.UnregisterInput(this);
         expired(this);
-    }
-
-    protected void MoveTo(Transform target, float speed)
-    {
-        
-    }
-
-    protected void MoveStraightforward(float speed)
-    {
-        transform.Translate(new Vector3(0f, 0f, 1.0f) * Time.deltaTime * speed, Space.Self);
     }
 
     protected void StartTimer()

@@ -23,14 +23,14 @@ public class ItemsMgr : MonoBehaviour {
     void Awake()
     {
         GameObject item_prefab;
-        item_prefab = Resources.Load<GameObject>("Items/Prefabs/Star");
-        items_prefabs_list.Add(item_prefab);
+        //item_prefab = Resources.Load<GameObject>("Items/Prefabs/Star");
+        //items_prefabs_list.Add(item_prefab);
         item_prefab = Resources.Load<GameObject>("Items/Prefabs/GreenShell");
         items_prefabs_list.Add(item_prefab);
-        item_prefab = Resources.Load<GameObject>("Items/Prefabs/Mushroom");
-        items_prefabs_list.Add(item_prefab);
-        item_prefab = Resources.Load<GameObject>("Items/Prefabs/BananaItem");
-        items_prefabs_list.Add(item_prefab);
+        //item_prefab = Resources.Load<GameObject>("Items/Prefabs/Mushroom");
+        //items_prefabs_list.Add(item_prefab);
+        //item_prefab = Resources.Load<GameObject>("Items/Prefabs/BananaItem");
+        //items_prefabs_list.Add(item_prefab);
     }
 
     // Use this for initialization

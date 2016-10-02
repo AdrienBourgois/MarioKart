@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BananaItem : BaseItem, IThrowableItem {
+public class BananaItem : BaseItem /*IThrowableItem*/ {
 
     [SerializeField]
     float rotation_speed;
@@ -12,29 +12,23 @@ public class BananaItem : BaseItem, IThrowableItem {
     {
 
     }
-
+    
     // Update is called once per frame
     protected override void Update()
     {
-        if (!is_throwed)
+        if (!is_active)
             base.Update();
-    }
-
-    public void Throw()
-    {
-        is_throwed = true;
     }
 
     public override void ActiveItem()
     {
         base.ActiveItem();
-        Throw();
         Expire();
     }
 
     void FixedUpdate()
     {
-        if (is_throwed)
+        if (is_active)
         {
             if (target != null)
             {
@@ -43,21 +37,18 @@ public class BananaItem : BaseItem, IThrowableItem {
                 else
                     Destroy(this.gameObject);
             }
-
         }
     }
 
     void OnTriggerEnter(Collider collider)
     {
-        //Debug.Log("yooo");
         if (!used)
-            if (is_throwed)
+            if (is_active)
                 if (collider.gameObject.tag == "AreaEffectKart")
                 {
                     target = collider.transform.parent.gameObject;
                     StartActionTimer();
                     gameObject.GetComponent<Renderer>().enabled = false;
-                    //gameObject.GetComponent<Collider>().isTrigger = false;
                     used = true;
                 }
     }

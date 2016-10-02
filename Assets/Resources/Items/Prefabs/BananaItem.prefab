@@ -89,10 +89,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item_name: Banana
-  is_active: 0
   life_time: 10
   action_time: 2
-  rotation_speed: 300
+  rotation_speed: 1500
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
