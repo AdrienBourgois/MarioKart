@@ -23,6 +23,8 @@ public class InputMgr : MonoBehaviour
     public delegate void InputKey();
     public event InputKey spaceIsDown;
     public event InputKey spaceIsUp;
+    public event InputKey upArrow;
+    public event InputKey downArrow;
     public event InputKey ObjectBackIsDown;
     public event InputKey ObjectBackIsUp;
     public event InputKey escapeIsDown;
@@ -51,15 +53,19 @@ public class InputMgr : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftControl))
             if (LeftControlIsDown != null)
                 LeftControlIsDown();
-            //if (Input.GetButtonDown("UseObject") && spaceIsDown != null)
-            //    spaceIsDown();
-            //if (Input.GetButtonUp("UseObject") && spaceIsUp != null)
-            //    spaceIsUp();
-            //if (Input.GetButtonUp("ObjectBack") && ObjectBackIsUp != null)
-            //    ObjectBackIsUp();
-            //if (Input.GetButtonDown("ObjectBack") && ObjectBackIsDown != null)
-            //    ObjectBackIsDown();
-            if (Input.GetKeyDown(KeyCode.Escape) && escapeIsDown != null)
+        if (Input.GetKey(KeyCode.DownArrow))
+            if(Input.GetKeyDown(KeyCode.Space))
+                if (spaceIsDown != null)
+                    spaceIsDown();
+        //if (Input.GetButtonDown("UseObject") && spaceIsDown != null)
+        //    spaceIsDown();
+        //if (Input.GetButtonUp("UseObject") && spaceIsUp != null)
+        //    spaceIsUp();
+        //if (Input.GetButtonUp("ObjectBack") && ObjectBackIsUp != null)
+        //    ObjectBackIsUp();
+        //if (Input.GetButtonDown("ObjectBack") && ObjectBackIsDown != null)
+        //    ObjectBackIsDown();
+        if (Input.GetKeyDown(KeyCode.Escape) && escapeIsDown != null)
             escapeIsDown();
     }
 

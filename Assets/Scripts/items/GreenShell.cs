@@ -93,7 +93,13 @@ public class GreenShell : BaseItem, IThrowableItem {
 
     public void MoveStraightforward(float speed)
     {
-        transform.Translate(new Vector3(0f, 0f, 1f), Space.Self);
+        if (actual_spawn == frontal_spawn)
+            transform.Translate(new Vector3(0f, 0f, 1f), Space.Self);
+        else if (actual_spawn == rear_spawn)
+        {
+            transform.Translate(new Vector3(0f, 0f, -1f), Space.Self);
+            Debug.Log("rear spawn");
+        }
     }
 
     void KartCollisionAction()
