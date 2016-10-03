@@ -16,7 +16,9 @@ public abstract class BaseItem : MonoBehaviour {
     protected float expire_life_time;
     protected Transform frontal_spawn;
     protected Transform rear_spawn;
+    protected Transform actual_spawn;
     protected GameObject target;
+    protected GameObject sender;
     
 
     public GameObject Target { get { return target; } set { target = value; } }
@@ -43,7 +45,9 @@ public abstract class BaseItem : MonoBehaviour {
     {
         frontal_spawn = new_frontal_spawn;
         rear_spawn = new_rear_spawn;
+        actual_spawn = rear_spawn;
         target = new_target;
+        //sender = new_sender;//
     }
 
     // Use this for initialization
@@ -55,11 +59,11 @@ public abstract class BaseItem : MonoBehaviour {
 	protected virtual void Update () { 
 
             //Debug.Log("Idle_pos = " + idle_pos.position);
-            Vector3 pos = frontal_spawn.position;
+            Vector3 pos = actual_spawn.position;
             //pos.y += 5;
-            transform.position = pos;//idle_pos.position;
+            transform.position = pos;
             //Debug.Log("PowerUp pos =" + transform.position);
-            Quaternion rotation = frontal_spawn.rotation;
+            Quaternion rotation = actual_spawn.rotation;
             rotation.x = 0;
             rotation.z = 0;
             transform.rotation = rotation;
@@ -104,5 +108,15 @@ public abstract class BaseItem : MonoBehaviour {
         if (Time.time > expire_action_time)
             return true;
         return false;
+    }
+
+    public void ActiveFrontalSpawn()
+    {
+        actual_spawn = frontal_spawn;
+    }
+
+    public void ActiveRearSpawn()
+    {
+        actual_spawn = rear_spawn;
     }
 }
