@@ -49,7 +49,7 @@ public class BananaItem : BaseItem /*IThrowableItem*/ {
                     target = collider.transform.parent.gameObject;
                     StartActionTimer();
                     gameObject.GetComponent<Renderer>().enabled = false;
-                    used = true;
+                    used = true;/////
                 }
     }
 
