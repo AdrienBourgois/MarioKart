@@ -77,12 +77,15 @@ public class GreenShell : BaseItem, IThrowableItem {
             {
                 if (hit.collider.tag == "AreaEffectKart")
                 {
-                    Debug.Log("kart collision");
-                    target = hit.collider.transform.parent.gameObject;
-                    StartActionTimer();
-                    gameObject.GetComponent<Renderer>().enabled = false;
+                    if (hit.collider.transform.parent.gameObject != sender)
+                    {
+                        Debug.Log("kart collision");
+                        target = hit.collider.transform.parent.gameObject;
+                        StartActionTimer();
+                        gameObject.GetComponent<Renderer>().enabled = false;
+                    }
                 }
-            }  //else if (hit.collider)
+            }
         }
     }
 
@@ -93,13 +96,12 @@ public class GreenShell : BaseItem, IThrowableItem {
 
     public void MoveStraightforward(float speed)
     {
-        if (actual_spawn == frontal_spawn)
-            transform.Translate(new Vector3(0f, 0f, 1f), Space.Self);
-        else if (actual_spawn == rear_spawn)
-        {
-            transform.Translate(new Vector3(0f, 0f, -1f), Space.Self);
-            Debug.Log("rear spawn");
-        }
+        /*if (actual_spawn == frontal_spawn)
+            Debug.Log("frontal_spawn");
+        if (actual_spawn == rear_spawn)
+            Debug.Log("rear_spawn");*/
+
+        transform.Translate(new Vector3(0f, 0f, 1f), Space.Self);
     }
 
     void KartCollisionAction()

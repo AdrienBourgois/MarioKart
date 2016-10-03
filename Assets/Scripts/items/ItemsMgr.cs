@@ -52,8 +52,8 @@ public class ItemsMgr : MonoBehaviour {
     public void UnregisterInput(BaseItem power_up)
     {
         InputMgr.Instance.spaceIsDown -= power_up.ActiveItem;
-        InputMgr.Instance.upArrow += power_up.ActiveFrontalSpawn;
-        InputMgr.Instance.downArrow += power_up.ActiveRearSpawn;
+        InputMgr.Instance.upArrow -= power_up.ActiveFrontalSpawn;
+        InputMgr.Instance.downArrow -= power_up.ActiveRearSpawn;
     }
 
     public void AddItemToKart(GameObject kart)
@@ -61,7 +61,7 @@ public class ItemsMgr : MonoBehaviour {
         
         GameObject item = RandItemInstance();
         BaseItem power_up = item.GetComponent<BaseItem>();
-        power_up.Init(kart.transform.Find("FrontalSpawn"), kart.transform.Find("RearSpawn"), null);
+        power_up.Init(kart.transform.Find("FrontalSpawn"), kart.transform.Find("RearSpawn"), null, kart);
 
         RegisterInput(power_up);
         CarsMgr.Instance.InscribeToPowerUpEvents(kart, power_up);

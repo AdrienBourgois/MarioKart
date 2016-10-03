@@ -41,13 +41,13 @@ public abstract class BaseItem : MonoBehaviour {
        
     }
 
-    public void Init(Transform new_frontal_spawn, Transform new_rear_spawn, GameObject new_target)
+    public void Init(Transform new_frontal_spawn, Transform new_rear_spawn, GameObject new_target, GameObject new_sender)
     {
         frontal_spawn = new_frontal_spawn;
         rear_spawn = new_rear_spawn;
         actual_spawn = rear_spawn;
         target = new_target;
-        //sender = new_sender;//
+        sender = new_sender;
     }
 
     // Use this for initialization
@@ -56,17 +56,8 @@ public abstract class BaseItem : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	protected virtual void Update () { 
-
-            //Debug.Log("Idle_pos = " + idle_pos.position);
-            Vector3 pos = actual_spawn.position;
-            //pos.y += 5;
-            transform.position = pos;
-            //Debug.Log("PowerUp pos =" + transform.position);
-            Quaternion rotation = actual_spawn.rotation;
-            rotation.x = 0;
-            rotation.z = 0;
-            transform.rotation = rotation;
+	protected virtual void Update () {
+        UpdateSpawnPosition();
 	}
 
     public virtual void ActiveItem()
@@ -110,13 +101,25 @@ public abstract class BaseItem : MonoBehaviour {
         return false;
     }
 
+    protected void UpdateSpawnPosition()
+    {
+        Vector3 pos = actual_spawn.position;
+        transform.position = pos;
+        Quaternion rotation = actual_spawn.rotation;
+        rotation.x = 0;
+        rotation.z = 0;
+        transform.rotation = rotation;
+    }
+
     public void ActiveFrontalSpawn()
     {
         actual_spawn = frontal_spawn;
+        UpdateSpawnPosition();
     }
 
     public void ActiveRearSpawn()
     {
         actual_spawn = rear_spawn;
+        UpdateSpawnPosition();
     }
 }

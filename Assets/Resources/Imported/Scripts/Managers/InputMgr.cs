@@ -54,9 +54,21 @@ public class InputMgr : MonoBehaviour
             if (LeftControlIsDown != null)
                 LeftControlIsDown();
         if (Input.GetKey(KeyCode.DownArrow))
-            if(Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                if (downArrow != null)
+                    downArrow();
                 if (spaceIsDown != null)
                     spaceIsDown();
+            }
+        if (Input.GetKey(KeyCode.UpArrow))
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                if (upArrow != null)
+                    upArrow();
+                if (spaceIsDown != null)
+                    spaceIsDown();
+            }
         //if (Input.GetButtonDown("UseObject") && spaceIsDown != null)
         //    spaceIsDown();
         //if (Input.GetButtonUp("UseObject") && spaceIsUp != null)
