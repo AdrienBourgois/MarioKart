@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3ffd8478ec42e464d9f9a00d01795ca2
+timeCreated: 1475505192
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - gameMgr: {fileID: 11472266, guid: 405fe4f5faacfbe40b6586dcaeb71c1e, type: 2}
+  - positon_label: {instanceID: 0}
+  - turn_label: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
