@@ -47,7 +47,7 @@ public abstract class BaseItem : MonoBehaviour {
         rear_spawn = new_rear_spawn;
         actual_spawn = rear_spawn;
         target = new_target;
-        sender = new_sender;
+        //sender = new_sender;
     }
 
     // Use this for initialization
