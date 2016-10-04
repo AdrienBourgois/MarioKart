@@ -97,7 +97,7 @@ public class Animations : MonoBehaviour {
             DestroyObject(current_animated_object);
         current_animated_object = Instantiate(obj);
         current_animated_object.transform.SetParent(menu_mgr.cam.transform);
-        current_animated_object.transform.Rotate(new Vector3(25, 145, 0), Space.Self);
+        current_animated_object.transform.Rotate(new Vector3(25, 0, 0), Space.Self);
         current_animated_object.transform.position = position;
     }
 }
